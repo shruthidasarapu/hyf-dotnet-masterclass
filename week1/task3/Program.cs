@@ -12,7 +12,7 @@ int[] GetResult(int[] arr)
         }
         else if (arr[i] >= 0)
         {
-            multipleOfPositiveNumbers = multipleOfPositiveNumbers * arr[i];
+            multipleOfPositiveNumbers *= arr[i];
         }
     }
     return new int[] { sumOfNegativeNumbers, multipleOfPositiveNumbers };
