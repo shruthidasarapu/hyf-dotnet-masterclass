@@ -4,7 +4,6 @@ Console.WriteLine("Hello, World!");
 var time = new JupiterTime();
 time.Hours = 8;
 time.Minutes = 20;
-
 PrintTime(time);
 
 void PrintTime(JupiterTime time)

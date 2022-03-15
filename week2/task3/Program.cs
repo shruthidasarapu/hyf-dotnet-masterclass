@@ -2,14 +2,11 @@
 Console.WriteLine("Hello, World!");
 var time = new JupiterTime(2, 20);
 var timeIn2Hours = time.AddHours(3);
-
 PrintTime(timeIn2Hours);
 
 void PrintTime(JupiterTime time)
 {
-
     Console.WriteLine($"({time.Hours:00}:{time.Minutes:00})");
-
 }
 public class JupiterTime
 {
@@ -30,18 +27,7 @@ public class JupiterTime
             _hours = value;
         }
     }
-    public int Minutes
-    {
-        get
-        {
-            return _minutes;
-        }
-        set
-        {
-            _minutes = value;
-        }
-    }
-
+    public int Minutes { get; set; }
     public JupiterTime AddHours(int number)
     {
         if (_hours + number > 12)

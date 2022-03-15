@@ -1,13 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
-
 var time2 = new JupiterTime(17, 88);
 PrintTime(time2);
 
 void PrintTime(JupiterTime time)
 {
     Console.WriteLine($"({time.Hours:00}:{time.Minutes:00})");
-
 }
 public class JupiterTime
 {

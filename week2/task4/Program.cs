@@ -17,17 +17,7 @@ public class JupiterTime
         Hours = hours;
         Minutes = minutes;
     }
-    public int Hours
-    {
-        get
-        {
-            return _hours;
-        }
-        set
-        {
-            _hours = value;
-        }
-    }
+    public int Hours { get; set; }
     public int Minutes
     {
         get
@@ -39,7 +29,6 @@ public class JupiterTime
             _minutes = value;
         }
     }
-
     public JupiterTime AddMinutes(int number)
     {
         if (_minutes + number > 60)
@@ -48,7 +37,7 @@ public class JupiterTime
             Console.WriteLine("Negative numbers are not accepted");
         else
             _minutes = _minutes + number;
-        return this;
+        return new JupiterTime(_hours, _minutes);
     }
 
 }
