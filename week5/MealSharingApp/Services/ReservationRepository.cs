@@ -14,12 +14,6 @@ public class ReservationRepository : IReservationRepository
         await using var connection = new MySqlConnection(Shared.ConnectionString);
         var reserveId = await connection.ExecuteAsync("INSERT INTO Reservation (ID, number_of_guests,meal_id,created_date,contact_phonenumber,contact_name,contact_email) VALUES (@ID, @NumberOfPersons,@MealID, @Date,@PhoneNumber, @Name, @Email )", reserve);
     }
-
-    public void Delete(int ID)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task DeleteReservation(int id)
     {
         await using var connection = new MySqlConnection(Shared.ConnectionString);

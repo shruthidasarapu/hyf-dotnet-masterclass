@@ -6,5 +6,5 @@ public interface IMealRepository
     Task<IEnumerable<Meal>> ListMeals();
     Task<Meal> FindMealById(int id);
     Task DeleteMeal(int id);
-
+    Task<IEnumerable<MealReservation>> ListMealReservations(int id);
 }

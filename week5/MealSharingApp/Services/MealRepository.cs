@@ -31,7 +31,12 @@ public class MealRepository : IMealRepository
         var meals = await connection.QueryAsync<Meal>("SELECT * FROM meal");
         return meals;
     }
-
+    public async Task<IEnumerable<MealReservation>> ListMealReservations(int id)
+    {
+        await using var connection = new MySqlConnection(Shared.ConnectionString);
+        var mealreservations = await connection.QueryAsync<MealReservation>("SELECT meal.ID, Title,Name, NumberOfPersons FROM meal inner join reservation where meal.ID = @MealId", new { MealId = id });
+        return mealreservations;
+    }
 }
 
 
