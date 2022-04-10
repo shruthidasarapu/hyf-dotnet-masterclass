@@ -9,7 +9,7 @@ public class MealRepository : IMealRepository
     {
 
         await using var connection = new MySqlConnection(Shared.ConnectionString);
-        var mealId = await connection.ExecuteAsync("INSERT INTO Meal (ID, Title, Description, Price, `When`, Location, max_reservations, created_date) VALUES (@ID, @Title, @Description, @Price, @When, @Location,@MaxReservations, @CreatedDate)", meal);
+        var mealId = await connection.ExecuteAsync("INSERT INTO Meal (ID, Title,image_url, Description, Price, `When`, Location, max_reservations, created_date) VALUES (@ID, @Title,@ImageUrl, @Description, @Price, @When, @Location,@MaxReservations, @CreatedDate)", meal);
     }
 
     public async Task DeleteMeal(int id)
@@ -25,17 +25,32 @@ public class MealRepository : IMealRepository
         return meal;
     }
 
-    public async Task<IEnumerable<Meal>> ListMeals()
-    {
-        await using var connection = new MySqlConnection(Shared.ConnectionString);
-        var meals = await connection.QueryAsync<Meal>("SELECT * FROM meal");
-        return meals;
-    }
+
     public async Task<IEnumerable<MealReservation>> ListMealReservations(int id)
     {
         await using var connection = new MySqlConnection(Shared.ConnectionString);
         var mealreservations = await connection.QueryAsync<MealReservation>("SELECT meal.ID, Title,Name, NumberOfPersons FROM meal inner join reservation where meal.ID = @MealId", new { MealId = id });
         return mealreservations;
+    }
+    // public async Task<IEnumerable<Meal>> ListMeals(MealSearch mealSearch)
+    // {
+    //     var query = "select * from meal";
+
+    //     if (!string.IsNullOrWhiteSpace(mealSearch?.Title))
+    //     {
+    //         query += " where title like @title";
+    //     }
+    //     await using var connection = new MySqlConnection(Shared.ConnectionString);
+    //     var meals = await connection.QueryAsync<Meal>(query, new { Title = "%" + mealSearch.Title + "%" });
+
+    //     return meals;
+    // }
+    public async Task<IEnumerable<Meal>> ListMeals()
+    {
+        await using var connection = new MySqlConnection(Shared.ConnectionString);
+        Console.Write(connection);
+        var meals = await connection.QueryAsync<Meal>("SELECT * FROM meal");
+        return meals;
     }
 }
 

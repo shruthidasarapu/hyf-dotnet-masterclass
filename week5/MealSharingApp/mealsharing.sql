@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `mealsharing` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `mealsharing`;
+CREATE DATABASE  IF NOT EXISTS `mealapplication` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `mealapplication`;
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
 -- Host: localhost    Database: mealsharing
@@ -77,6 +77,7 @@ DROP TABLE IF EXISTS `meal`;
 CREATE TABLE `meal` (
   `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
+  `image_url`varchar(255),
   `description` text NOT NULL,
   `location` varchar(255) NOT NULL,
   `when` datetime NOT NULL,
@@ -94,7 +95,7 @@ CREATE TABLE `meal` (
 
 LOCK TABLES `meal` WRITE;
 /*!40000 ALTER TABLE `meal` DISABLE KEYS */;
-INSERT INTO `meal` VALUES (1,'chicken pasta','spicy','copenhagen','2020-10-20 12:10:15',5,200,'2020-10-20'),(2,'fish nuggets','with ketchup','hellerup','2020-09-20 12:12:12',8,80,'2020-09-20'),(3,'spring rolls','vegetable','ballerup','2020-12-13 14:02:10',6,50,'2020-12-12'),(4,'burger','chicken','lyngby','2020-05-06 11:10:12',5,120,'2020-05-06'),(5,'sandwitch','chicken','bagsværd','2020-10-05 10:02:15',3,80,'2020-10-05'),(6,'rød grød med flød','egg','buddinge','2020-08-12 12:05:10',2,50,'2020-08-12'),(7,'anbmd','basjhbjh','cph','2020-12-13 14:02:10',4,30,'2020-10-16');
+INSERT INTO `meal` VALUES (1,'chicken pasta','https://user-images.githubusercontent.com/66563360/162420709-8174a0de-0f8c-4527-9ce2-3c038561d49a.jpg','spicy','copenhagen','2020-10-20 12:10:15',5,200,'2020-10-20'),(2,'fish nuggets','with ketchup','hellerup','2020-09-20 12:12:12',8,80,'2020-09-20'),(3,'spring rolls','vegetable','ballerup','2020-12-13 14:02:10',6,50,'2020-12-12'),(4,'burger','chicken','lyngby','2020-05-06 11:10:12',5,120,'2020-05-06'),(5,'sandwitch','chicken','bagsværd','2020-10-05 10:02:15',3,80,'2020-10-05'),(6,'rød grød med flød','egg','buddinge','2020-08-12 12:05:10',2,50,'2020-08-12'),(7,'anbmd','basjhbjh','cph','2020-12-13 14:02:10',4,30,'2020-10-16');
 /*!40000 ALTER TABLE `meal` ENABLE KEYS */;
 UNLOCK TABLES;
 
