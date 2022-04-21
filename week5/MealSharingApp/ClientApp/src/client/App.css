@@ -1,21 +1,43 @@
-* {
+/* * {
     box-sizing: border-box;
     
-}
+} */
 .footer {
     color:white;
-    background-color: black;
+    background-color: #343a40;
     padding-left: 30px;
     padding-top: 20px;
     text-align: center;
+    clear: both;
+    position: relative;
+    height: 200px;
+    /* margin-top: -200px; */
 }
 .title {
-    display: block;
+    /* display: block; */
     padding:30px;
    background-color: #f2f2f2;
    text-align: center;
-        
+   opacity: 0.8;
+   width: fit-content;
+   height: fit-content;
+   border-radius: 8px; 
+   border:none; 
+   margin: 20px;
     }
+.meals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       justify-content: center;
+       column-gap: 30px;
+       row-gap: 30px;
+       margin: 30px 60px;
+    }     
+  .meals div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }  
 form {
     padding: 10px;
     border-radius: 5px;
@@ -59,4 +81,9 @@ form {
         margin-left: 10%;
         margin-top: 30px;
     }
-    
+    .images {
+        height: 180px;
+        width: 250px;
+        border: 10px;
+        box-shadow: 10px 10px 30px blanchedalmond;
+    }

@@ -5,15 +5,16 @@
   box-sizing: border-box;
 }
 
-#root {
+/* #root {
   padding-left: 30%;
   padding-right: 30%;
   height: 100vh;
-}
+} */
 
 body {
   margin: 0;
   font-size: 17px;
+  height: 100vh;
 }
 
 ul {
@@ -36,7 +37,7 @@ button {
   padding: 5px;
   font-size: 17px;
 }
-
+/* 
 @media screen and (max-width: 1400px) {
   #root {
     padding-left: 30%;
@@ -49,4 +50,4 @@ button {
     padding-left: 0;
     padding-right: 0;
   }
-}
+} */

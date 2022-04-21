@@ -15,9 +15,13 @@ function App(){
    <>
       
   <Navbar bg="dark" variant="dark">
+  <Container>
+     <Nav>
   <img src={logo} alt="Logo" style= {{height:30 , width:30}} />;
     <Navbar.Brand href="#">MEAL-SHARING</Navbar.Brand>
-    <Nav className="mr-auto">
+    <Navbar.Toggle />
+    </Nav>
+    <Nav className="justify-content-end">
       
       <Nav.Link href="/">Home</Nav.Link>
       <Nav.Link href="/meal">Add Meal</Nav.Link>
@@ -28,6 +32,7 @@ function App(){
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-info">Search</Button>
     </Form>*/}
+      </Container>
   </Navbar>
   
 

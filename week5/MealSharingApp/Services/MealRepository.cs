@@ -49,7 +49,7 @@ public class MealRepository : IMealRepository
     {
         await using var connection = new MySqlConnection(Shared.ConnectionString);
         Console.Write(connection);
-        var meals = await connection.QueryAsync<Meal>("SELECT * FROM meal");
+        var meals = await connection.QueryAsync<Meal>("SELECT ID, Title,image_url as ImageUrl, Description, Price, `When`, Location, max_reservations as MaxReservations, created_date as CreatedDate FROM meal");
         return meals;
     }
 }
