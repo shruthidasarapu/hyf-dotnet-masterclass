@@ -4,7 +4,7 @@ using MealSharingApp.Services;
 
 namespace MealSharingApp.Controllers;
 [ApiController]
-[Route("meals")]
+[Route("api/meals")]
 public class MealController : ControllerBase
 {
     private IMealRepository _repo;
@@ -14,7 +14,12 @@ public class MealController : ControllerBase
         _repo = repo;
     }
 
-    [HttpGet]
+    [HttpGet("")]
+    // public async Task<IEnumerable<Meal>> ListAllMeals([FromQuery] MealSearch mealSearch)
+    // {
+
+    //     return await _repo.ListMeals(mealSearch);
+    // }
     public async Task<IEnumerable<Meal>> ListAllMeals()
     {
 
@@ -26,18 +31,18 @@ public class MealController : ControllerBase
         var meal = await _repo.FindMealById(id);
         return meal;
     }
-    [HttpPost("Add")]
+    [HttpPost("")]
     public async Task AddMeal([FromBody] Meal m)
     {
         await _repo.AddMeal(m);
     }
 
-    [HttpDelete("Delete")]
+    [HttpDelete("")]
     public async Task DeleteMeal(int id)
     {
         await _repo.DeleteMeal(id);
     }
-    [HttpGet("MealReservation")]
+    [HttpGet("reservation/{id}")]
     public async Task<IEnumerable<MealReservation>> ListMealReservations(int id)
     {
 

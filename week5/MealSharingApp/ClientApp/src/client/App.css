@@ -1,0 +1,89 @@
+/* * {
+    box-sizing: border-box;
+    
+} */
+.footer {
+    color:white;
+    background-color: #343a40;
+    padding-left: 30px;
+    padding-top: 20px;
+    text-align: center;
+    clear: both;
+    position: relative;
+    height: 200px;
+    /* margin-top: -200px; */
+}
+.title {
+    /* display: block; */
+    padding:30px;
+   background-color: #f2f2f2;
+   text-align: center;
+   opacity: 0.8;
+   width: fit-content;
+   height: fit-content;
+   border-radius: 8px; 
+   border:none; 
+   margin: 20px;
+    }
+.meals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       justify-content: center;
+       column-gap: 30px;
+       row-gap: 30px;
+       margin: 30px 60px;
+    }     
+  .meals div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }  
+form {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width:40%;
+    margin-left:20px;
+    }
+    .col-sm {
+        text-align: center;
+    }
+    .rev {
+        padding:20px;
+        background-color: #f2f2f2;
+        text-align: center;
+        border:1px solid gray;
+        border-radius: 15px;
+        width:40%;
+        margin-bottom: 20px;
+        margin-left: 30%;
+        margin-top: 30px;
+    }
+    h2 {
+        margin-left:30px;
+    }
+    .meal {
+        padding:20px;
+        margin-left: 20px;
+        background-color: #f2f2f2;
+        margin-top: 30px;
+        width:50%;
+    }
+    .res {
+        padding:20px;
+        background-color: #f2f2f2;
+        text-align: center;
+        border:1px solid gray;
+        border-radius: 15px;
+        width:60%;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-top: 30px;
+    }
+    .images {
+        height: 180px;
+        width: 250px;
+        border: 10px;
+        box-shadow: 10px 10px 30px blanchedalmond;
+    }
