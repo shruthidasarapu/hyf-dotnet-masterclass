@@ -20,9 +20,11 @@ public class MealController : ControllerBase
 
     //     return await _repo.ListMeals(mealSearch);
     // }
-    public async Task<IEnumerable<Meal>> ListAllMeals()
+    public async Task<IEnumerable<Meal>> ListAllMeals(
+        [FromServices] ILogger<MealController> logger
+    )
     {
-
+        logger.LogWarning(Shared.ConnectionString);
         return await _repo.ListMeals();
     }
     [HttpGet("{id}")]
